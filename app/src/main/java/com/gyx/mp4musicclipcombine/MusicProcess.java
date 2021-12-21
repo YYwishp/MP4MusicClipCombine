@@ -397,7 +397,7 @@ public class MusicProcess {
 		int byteNum = bitNum / 8;
 		//
 		int position = (int) (time * sampleRate * channels * byteNum / 1000);
-		//这里要特别注意，要取整（byteNum * channels）的倍数
+		//这里要特别注意，要取整（byteNum * channels）的倍数,当time 是float的时候
 		position = position / (byteNum * channels) * (byteNum * channels);
 		return position;
 	}
